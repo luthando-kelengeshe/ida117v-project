@@ -1,0 +1,86 @@
+{
+  "search": "random search",
+  "n_trials": 40,
+  "seed": 42,
+  "scoring_rule": "survey-weighted average precision (PR-AUC) on validation years 2019-2020",
+  "early_stopping": "inner split - fit on 2012-2017, stop on 2018; validation used only for trial scoring",
+  "test_policy": "test years 2021-2022 not used anywhere in the search; read once for the locked evaluation",
+  "space": {
+    "hidden": [
+      "(256, 128, 64)",
+      "(128, 64)",
+      "(256, 128)",
+      "(64, 32)",
+      "(512, 256, 128)",
+      "(128,)"
+    ],
+    "p_drop": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "0.5"
+    ],
+    "lr": [
+      "0.0003",
+      "0.0005",
+      "0.001",
+      "0.002"
+    ],
+    "wd": [
+      "0.0",
+      "1e-05",
+      "0.0001",
+      "0.001"
+    ],
+    "bs": [
+      "256",
+      "512",
+      "1024",
+      "2048"
+    ],
+    "pos_weight": [
+      "None",
+      "1.0",
+      "2.0",
+      "3.0",
+      "5.494",
+      "8.0"
+    ],
+    "min_freq": [
+      "20",
+      "50",
+      "200"
+    ],
+    "use_sensitive": [
+      "True",
+      "False"
+    ],
+    "drop_constant": [
+      "True",
+      "False"
+    ]
+  },
+  "selected": {
+    "hidden": "(512, 256, 128)",
+    "p_drop": 0.1,
+    "lr": 0.002,
+    "wd": 1e-05,
+    "bs": 2048,
+    "pos_weight": 3.0,
+    "min_freq": 20,
+    "use_sensitive": true,
+    "drop_constant": true
+  },
+  "selected_best_epoch": 4,
+  "val_pr_auc_pre": 0.23546,
+  "val_pr_auc_post": 0.2442937607330474,
+  "cv_leave_one_year": {
+    "pr_auc_mean": 0.3072142857142857,
+    "pr_auc_sd": 0.03493753418943722,
+    "roc_auc_mean": 0.6818342857142856,
+    "roc_auc_sd": 0.0076394673835786485,
+    "folds": 7
+  }
+}

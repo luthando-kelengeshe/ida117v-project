@@ -1,0 +1,664 @@
+
+########## PAGE 1 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+INTRODUCTION TO 
+DATA SCIENCE 
+GROUP PROJECT 
+Data Science for Better Service Delivery in South Africa 
+From a real public problem to a statistically validated machine-learning solution 
+Assessment type Group project 
+Group size Maximum 6 students 
+Total marks 100 
+Weighting As prescribed in the module assessment plan 
+Due date / presentation 
+Presentations Starts from 5th October -17th October 
+2026 
+CENTRAL CHALLENGE 
+How can responsible data science help a South African public-service 
+stakeholder identify need, prioritise limited resources, or improve the 
+reliability and reach of a service? 
+Student names • student numbers • group number • lecturer • submission date 
+  
+########## PAGE 2 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+1. PROJECT PURPOSE 
+In a team of no more than six, identify a real service-delivery problem in South Africa and develop an end-
+to-end, reproducible machine -learning solution. The project must move beyond model accuracy: it must 
+establish a credible problem, use lawful and relevant data, compare robust baselines with neural models, 
+control overfitting, optimise one justified champion, test which components matter, and determine whether 
+the observed improvement is statistically credible. 
+Learning outcomes 
+• Frame a public-service problem as a measurable data -science task with clear stakeholders and success 
+criteria. 
+• Acquire, audit, visualise and prepare real data without leakage. 
+• Build reproducible traditional and neural-learning pipelines and evaluate them fairly. 
+• Diagnose overfitting, optimise a selected model, conduct an ablation study and apply a paired 
+statistical test. 
+• Deploy the selected model through a usable user interface that supports stakeholder -facing prediction 
+and responsible interpretation. 
+• Communicate limitations, ethical risks and actionable recommendations for a South African context. 
+2. PROJECT SCOPE AND DATA 
+Select a classification problem connected to service delivery. A regression or forecasting problem requires 
+prior lecturer approval and a statistically appropriate paired alternative to McNemar’s test. The outcome 
+must be meaningful to a public-service stakeholder—not merely convenient to predict. 
+Possible direction Example prediction target Potential public value 
+Basic-service vulnerability 
+Classify municipalities, wards 
+or areas into service -need/risk 
+categories 
+Support equitable prioritisation of 
+water, sanitation, electricity, 
+refusing removal or housing 
+interventions 
+Faults and citizen reports 
+Classify complaint type, 
+urgency, escalation or likely 
+resolution status 
+Improve triage and response 
+planning 
+########## PAGE 3 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+Possible direction Example prediction target Potential public value 
+Infrastructure reliability 
+Classify outage, failure or 
+interruption risk 
+Support preventive maintenance and 
+resource allocation 
+Access and inclusion 
+Classify areas or households 
+at risk of inadequate service 
+access 
+Identify gaps and monitor equitable 
+reach 
+Approved source route 
+Use a relevant dataset from Zindi or another authoritative, lecturer -approved platform. The source must 
+provide sufficient metadata, lawful reuse conditions and a defensible connection to South African service 
+delivery. 
+Source How it may be used Link 
+Statistics South 
+Africa 
+Census and service -delivery indicators 
+covering housing, water, sanitation, electricity 
+and solid waste at provincial/local -
+municipality level. 
+https://www.statssa.gov.za/?p=17836 
+Zindi 
+Select an open challenge or dataset whose 
+target can be reframed responsibly for a South 
+African service-delivery question. 
+https://zindi.africa/competitions 
+Another 
+approved 
+platform 
+Municipal open -data portals, national 
+departments, research repositories or open 
+geospatial sources; obtain written lecturer 
+approval before modelling. 
+Record the exact dataset URL and 
+licence in the report. 
+Platform competition rules are separate from this course. Your course group may contain up to six 
+members, but any optional external competition entry must comply with that platform’s own team rules. 
+Data approval checkpoint 
+Submit before modelling Required evidence 
+########## PAGE 4 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+Submit before modelling Required evidence 
+One-page concept notes 
+Problem, stakeholder, prediction unit, target, intended decision and 
+anticipated public value. 
+Dataset card 
+Source URL, owner, licence/terms, collection period, unit of analysis, 
+features, target, size, missingness, sensitive attributes and known 
+limitations. 
+Feasibility check 
+A usable target, adequate sample size/classes, no prohibited personal data, 
+computing suitable for the module, and an evaluation plan. 
+  
+########## PAGE 5 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+3. ASSESSMENT QUESTIONS 
+Answer every question in the submitted technical report. Marks in brackets indicate the relative depth 
+expected. 
+QUESTION 1          Total Marks [10] 
+1.1 Define the South African service -delivery problem, affected population, decision -maker and intended 
+benefit. Convert it into a classification task by specifying the unit of prediction, inputs, target classes 
+and prediction horizon.           (4) 
+1.2 State one primary technical metric and at least one service -delivery success indicator. Explain the cost 
+of false positives and false negatives.         (2) 
+1.3 Justify the dataset’s relevance, provenance, licence, coverage and limitations. Identify POPIA, privacy, 
+fairness and misuse risks and propose safeguards.       (4) 
+QUESTION 2          Total Marks [18] 
+2.1 Create a data dictionary and audit class balance, duplicates, missingness, invalid values, outliers and 
+possible leakage.            (4) 
+2.2 Present at least five purposeful visualisations: target distribution; missingness/data quality; two 
+feature–target relationships; and one geographic, temporal or subgroup view. Each figure must have a 
+title, units, readable labels and an interpretation.        (6) 
+2.3 Split data before learning transformations. Justify train/validation/test or nested cross -validation 
+design, including stratification/group/time constraints. Reserve the test set for final evaluation only. 
+ (3) 
+2.4 Implement cleaning, encoding, scaling, imputation, feature engineering and imbalance treatment inside 
+a reproducible pipeline. Explain choices and prevent leakage.      (5) 
+QUESTION 3          Total Marks [18] 
+3.1 Build a transparent naïve baseline (for example, majority/stratified DummyClassifier) and explain 
+what it establishes.           (2) 
+3.2 Train at least four substantive models on identical data splits: at least two traditional models and at 
+least two neural-learning models. The naïve baseline does not count among the four.   (10) 
+3.3 Traditional examples include Logistic Regression, Decision Tree/Random Forest, Support Vector 
+Machine, Naïve Bayes or gradient boosting. Neural requirements include an MLP and one task -
+appropriate second architecture (for example, CNN for imagery, GRU/LSTM for sequences, or an 
+approved tabular neural network).         (3) 
+########## PAGE 6 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+3.4 Document architecture/hyperparameters, loss, optimiser, epochs, batch size, regularisation, early 
+stopping, seeds, compute environment and reproducible training procedure.    (5) 
+3.5 Provide a concise rationale linking each model family to the data and problem.   (2) 
+QUESTION 4          Total Marks [16] 
+4.1 For every substantive model, report the same held -out metrics. Include accuracy and macro -F1; add 
+precision, recall, weighted -F1 and ROC -AUC as appropriate. For imbalance, include PR -AUC or 
+justify its omission.           (4) 
+4.2 Provide a classification report and confusion matrix for every model; provide ROC curves on one 
+common figure (one-vs-rest macro/micro curves for multiclass).     (5) 
+4.3 Compare all models with a clear table and bar chart. Show cross -validation means and variability or 
+confidence intervals where feasible. Select the provisional champion using validation —not test —
+performance.           (3) 
+4.4 Test for overfitting using train -versus-validation performance and learning curves; for neural models 
+also show training/validation loss and metric curves. Diagnose gaps and discuss early stopping, 
+dropout, weight decay, pruning or other controls used.       (4) 
+QUESTION 5          Total Marks [10] 
+5.1 Optimize only the strongest validation model using a documented method such as grid search, random 
+search, Bayesian optimisation or Optuna. Define the search space and scoring rule.   (4) 
+5.2 Use cross-validation or a strict validation set; do not tune on the held -out test set. Compare pre - and 
+post-optimisation results and report the chosen hyperparameters.    (4) 
+5.3 Evaluate the final locked pipeline once on the test set and explain whether the improvement is 
+practically meaningful.           (2) 
+QUESTION 6          Total Marks [10] 
+6.1 Conduct at least three controlled ablations. Remove or alter one feature group, preprocessing step, 
+imbalance method, regulariser or architecture component at a time while keeping split, seed and 
+evaluation protocol fixed. Report on the change in performance and interpret what the system depends 
+on.             (5) 
+6.2 Compare the optimized champion with the strongest comparator on the same  held-out cases using 
+McNemar’s test. Show the 2 × 2 correctness table, state H₀/H₁ and α = 0.05, report the statistic/exact p-
+value, and distinguish statistical from practical significance. Use the exact binomial version when 
+discordant counts are small.          (5) 
+########## PAGE 7 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+QUESTION 7          Total Marks [10] 
+7.1 Deploy the final optimized model through a working user interface. The interface may be developed 
+with Gradio, Streamlit, Flask, FastAPI with a web front end, or another lecturer -approved framework. 
+A notebook cell alone is not a user interface.        (2) 
+7.2 Allow a user to enter or upload valid input, run the complete saved preprocessing -and-model pipeline, 
+and display the predicted class, confidence/probability where appropriate, and a brief plain -language 
+explanation.            (2) 
+7.3 Include input validation, helpful error messages, class/feature guidance, a limitation or responsible -use 
+notice, and no exposed credentials or personal data.       (1) 
+7.4 Provide deployment instructions and either a stable demonstration link or a locally reproducible launch 
+command. Demonstrate at least three valid cases and one invalid-input case.    (2) 
+QUESTION 8          Total Marks [7] 
+8.1 Translate findings into a realistic recommendation for the stakeholder. State limitations, uncertainty, 
+fairness findings, monitoring needs and conditions under which the model should not be used. (2) 
+8.2 Submit a reproducible repository/package with README, environment/requirements, fixed seeds, 
+execution order, source links, data dictionary, saved model/pipeline and user -interface code. Do not 
+redistribute data if its licence forbids it.         (3) 
+8.3 Deliver a concise team presentation and live or recorded interface demonstration. Defend the 
+modelling choices and include a signed contribution statement; individual marks may be moderated 
+where evidence of contribution differs.         (2) 
+  
+########## PAGE 8 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+4. REQUIRED EVIDENCE AND EXPERIMENTAL RULES 
+Requirement Minimum acceptable evidence 
+Data split integrity 
+A diagram or written sequence showing split -before-fit; preprocessing 
+learned on training folds only; shared held -out cases for every final 
+comparison. 
+Model set 
+Naïve baseline + ≥4 substantive models: ≥2 traditional and ≥2 neural. 
+Hyperparameters and random seeds disclosed. 
+Core visual evidence 
+EDA figures, model comparison chart, confusion matrices, ROC curves, 
+learning curves, neural loss/metric curves and ablation plot/table. 
+User-interface deployment 
+Working interface loads the saved final pipeline, accepts valid input, returns 
+a prediction and confidence where appropriate, handles invalid input, 
+communicates limitations, and can be launched from documented 
+instructions. 
+Classification evidence 
+Per-model classification reports with class labels and support; class -sensitive 
+interpretation rather than accuracy alone. 
+Optimisation 
+Search strategy, ranges, validation score, selected configuration and locked 
+final test result. 
+Ablation 
+≥3 one -change-at-a-time experiments, same evaluation protocol, 
+performance deltas and interpretation. 
+McNemar validation 
+Paired predictions on identical test cases; table counts: both correct, 
+champion only correct, comparator only correct, both wrong; hypotheses, α, 
+p-value and conclusion. 
+Overfitting 
+Quantified train –validation gap plus learning curves; mitigation and 
+limitations discussed. 
+########## PAGE 9 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+Requirement Minimum acceptable evidence 
+Reproducibility 
+Code runs from documented instructions; no hidden manual steps, secrets or 
+local-only paths. 
+Submission package 
+Item Format / limit 
+Technical report PDF, suggested 15–20 pages excluding cover, references and appendices. 
+Code 
+Clean notebook(s) and/or scripts plus README and 
+requirements/environment file. 
+Deployed user interface 
+Interface source code, saved final pipeline/model, launch instructions, 
+dependency file, and stable demonstration link where available. 
+Evidence bundles 
+Figures, metric tables, predictions used in McNemar’s test, 
+model/experiment log and dataset card. 
+Presentation Suggested 10–12 minutes plus questions; every member must participate. 
+Contribution statement One page signed by all members, including roles and specific outputs. 
+Academic and responsible-use conditions 
+• Reference every dataset, library, external code fragment and source. Clearly label adapted code and 
+AI-assisted work according to institutional policy. 
+• Do not upload personal, confidential or access -controlled records to public repositories or external 
+tools. 
+• A high score requires correct reasoning and reproducible evidence; a complex model without 
+defensible evaluation will not earn automatic credit. 
+• Fabricated data provenance, results or contribution claims may be handled under the institution’s 
+academic-integrity procedures. 
+  
+########## PAGE 10 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+5. MARKING RUBRIC 
+Award marks within each criterion according to the descriptor that best matches the submitted evidence. 
+Intermediate marks may be used. A criterion with no verifiable evidence receives zero. 
+Criterion 
+Mar
+ks 
+Excellent 
+80–100% 
+Competent 
+65–79% 
+Developing 
+50–64% 
+Limited 
+1–49% 
+Absent 
+0% 
+1. Problem, 
+stakeholder
+, data & 
+ethics 
+10 
+Compelling 
+service-delivery 
+needs; precise 
+task and costs; 
+authoritative, 
+well-licensed 
+dataset; excellent 
+contextual, 
+POPIA and 
+fairness 
+reasoning. 
+Clear and 
+relevant 
+formulation; 
+suitable data and 
+good risk 
+discussion; 
+minor gaps. 
+Partly defined 
+task or weak 
+public-value 
+link; limited 
+data/ethics 
+justification. 
+Unclear or 
+unsuitable 
+problem/data; 
+major ethical or 
+provenance gaps. 
+No 
+credibl
+e 
+eviden
+ce. 
+2. Data 
+audit, EDA, 
+visualisatio
+n & 
+pipeline 
+18 
+Thorough audit; 
+insightful, 
+accessible 
+visuals; rigorous 
+split; leakage -
+safe, 
+reproducible 
+preparation with 
+strong 
+justification. 
+Sound audit and 
+visuals; mostly 
+correct pipeline; 
+small omissions. 
+Basic 
+EDA/preparati
+on; weak 
+interpretations 
+or some 
+pipeline risks. 
+Minimal/incorrec
+t preparation; 
+serious leakage 
+or unusable 
+visuals. 
+No 
+credibl
+e 
+eviden
+ce. 
+########## PAGE 11 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+Criterion 
+Mar
+ks 
+Excellent 
+80–100% 
+Competent 
+65–79% 
+Developing 
+50–64% 
+Limited 
+1–49% 
+Absent 
+0% 
+3. Baseline 
+& ≥4 
+models 
+22 
+Naïve baseline 
+plus compliant, 
+reproducible 2+2 
+model set; strong 
+rationales and 
+complete 
+neural/training 
+detail. 
+All model 
+requirements 
+met and mostly 
+reproducible; 
+minor 
+documentation 
+gaps. 
+Four models 
+attempted but a 
+family/architec
+ture, rationale 
+or 
+reproducibility 
+requirement is 
+weak. 
+Insufficient 
+models or largely 
+invalid/unreprodu
+cible training. 
+No 
+credibl
+e 
+eviden
+ce. 
+4. 
+Evaluation, 
+comparison 
+& 
+overfitting 
+16 
+Consistent multi -
+metric 
+evaluation; 
+complete 
+reports/matrices/
+ROC; excellent 
+visual 
+comparison and 
+quantified 
+overfitting 
+diagnosis/control
+s. 
+Correct core 
+evidence and 
+sensible 
+interpretation; 
+minor gaps. 
+Partial 
+metrics/plots 
+or superficial 
+overfitting 
+analysis. 
+Inconsistent 
+evaluation, test 
+misuse, or major 
+required evidence 
+missing. 
+No 
+credibl
+e 
+eviden
+ce. 
+########## PAGE 12 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+Criterion 
+Mar
+ks 
+Excellent 
+80–100% 
+Competent 
+65–79% 
+Developing 
+50–64% 
+Limited 
+1–49% 
+Absent 
+0% 
+5. 
+Champion 
+optimisatio
+n 
+10 
+Validation-led, 
+well-designed 
+search; 
+reproducible 
+configuration; 
+honest pre/post 
+and one -time test 
+evaluation with 
+practical 
+interpretation. 
+Correct 
+optimisation 
+with good 
+evidence; 
+limited 
+search/interpreta
+tion detail. 
+Optimisation 
+attempted but 
+weak protocol 
+or incomplete 
+comparison. 
+Test-set tuning, 
+unjustified 
+search, or non -
+reproducible 
+claim. 
+No 
+credibl
+e 
+eviden
+ce. 
+6. Ablation 
+& 
+McNemar 
+validation 
+10 
+≥3 controlled 
+ablations with 
+insightful deltas; 
+correct paired 
+test, assumptions, 
+contingency 
+table, p-value and 
+nuanced 
+conclusion. 
+Correct 
+minimum 
+ablations and 
+McNemar test; 
+small 
+interpretive 
+gaps. 
+Incomplete 
+controls or 
+minor 
+statistical 
+errors, but 
+approach is 
+recognisable. 
+Ablation 
+absent/invalid or 
+statistical test 
+fundamentally 
+misapplied. 
+No 
+credibl
+e 
+eviden
+ce. 
+########## PAGE 13 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+Criterion 
+Mar
+ks 
+Excellent 
+80–100% 
+Competent 
+65–79% 
+Developing 
+50–64% 
+Limited 
+1–49% 
+Absent 
+0% 
+7. User -
+interface 
+deployment 
+7 
+Working, 
+polished interface 
+runs the saved 
+end-to-end 
+pipeline; 
+validates input; 
+presents useful 
+predictions and 
+confidence; 
+includes 
+safeguards and 
+fully 
+reproducible 
+deployment. 
+Functional 
+interface and 
+documented 
+launch; minor 
+usability, 
+explanation or 
+validation gaps. 
+Basic interface 
+works for 
+limited cases 
+but 
+deployment, 
+validation or 
+documentation 
+is incomplete. 
+Interface is 
+largely non -
+functional, 
+bypasses the final 
+pipeline or 
+cannot be 
+reproduced. 
+No 
+credibl
+e 
+eviden
+ce. 
+8. 
+Conclusion
+s, 
+reproducibi
+lity & team 
+defence 
+7 
+Actionable, 
+cautious 
+recommendation; 
+transparent 
+limitations/fairne
+ss; complete code 
+and deployment 
+reproducibility; 
+polished defence 
+and credible 
+shared 
+contribution. 
+Clear conclusion 
+and usable 
+package/presenta
+tion; minor 
+omissions. 
+Generic 
+conclusion, 
+partial 
+reproducibility 
+or uneven 
+defence. 
+Unsupported 
+claims, unusable 
+package or weak 
+contribution 
+evidence. 
+No 
+credibl
+e 
+eviden
+ce. 
+TOTAL: 100 MARKS 
+########## PAGE 14 ##########
+INTRODUCTION TO DATA SCIENCE | GROUP PROJECT 
+IDA117V Project Template S2 2026 
+Suggested team roles 
+Roles may overlap, but accountability must be visible: project/stakeholder lead; data governance and 
+preparation lead; EDA/visualisation lead; traditional modelling lead; neural modelling lead; and 
+evaluation, deployment and reproducibility lead. All members remain responsible for understanding and 
+defending the complete pipeline and user interface. 
